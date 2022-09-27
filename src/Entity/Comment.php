@@ -135,4 +135,8 @@ class Comment
 
         return $this;
     }
+    public function __toString()
+    {
+        return $this->content;
+    }
 }

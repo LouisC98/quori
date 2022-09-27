@@ -1,0 +1,31 @@
+<div class="card w-100 shadow">
+    <div class="card-body">
+        <h3 class="card-title">
+            {{question.title}}
+        </h3>
+        <p class="card-text">
+            {{question.content}}
+        </p>
+    </div>
+    <div class="card-footer d-flex justify-content-between align-items-center">
+        <div class="d-flex justify-content-between flex-fill align-items-center">
+            <a href="{{path('app_user_questions', {id: question.user.id})}}">
+                @{{question.user.name}}
+                {{question.user.lastname}}
+            </a>
+            {% if comments == true %}
+            <a class="ms-1" href="{{path('app_question_show', {id: question.id})}}">
+                Voir {{question.comments|length}} réponse{% if question.comments|length > 1 %}s{% endif %}
+            </a>
+            {% endif %}
+            <small class="ms-1">
+                {{question.createdAt|format_datetime('short', 'short', locale='fr')}}
+            </small>
+        </div>
+        {% if app.user.id is defined %}
+        {% if question.user.id == app.user.id  %}
+        {{ include('question/_delete_form.html.twig') }}
+        {% endif %}
+        {% endif %}
+    </div>
+</div>

@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {% if user.id == app.user.id %}
+        Mes questions
+    {% else %}
+        Questions de {{user.name}}
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+<div class="container question-show">
+    <div class="text-center my-3 profile">
+        {% if user.id == app.user.id %}
+        <h2 class="text-center">Mes questions</h2>
+        {% else %}
+        <a href="{{path('app_user_questions', {id: user.id})}}">Questions de {{user.name}}</a>
+        <a href="{{path('app_user_comments', {id: user.id})}}">Réponses de {{user.name}}</a>
+        {% endif %}
+    </div>
+    <div class="row row-cols-1 g-3">
+        {% if questions %}
+        {% for question in questions %}
+        <div class="col">
+            {% include "_partials/_question_card.html.twig" with {comments: true}%}
+        </div>
+        {% endfor %}
+        {% else %}
+        <h3 class="text-center my-5">Aucune questions ...</h3>
+        {% endif %}
+    </div>
+
+</div>
+{% endblock %}

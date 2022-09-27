@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Question{% endblock %}
+
+{% block body %}
+<div class="container">
+
+    <div class="question-show row row-cols-1 g-3">
+        <div class="col">
+            {% include "_partials/_question_card.html.twig" with {comments: false} %}
+    
+        </div>
+        {% if formComment is defined %}
+        <div class="col">
+            {{form_start(formComment)}}
+            {{form_rest(formComment)}}
+            <div class="form-footer d-flex justify-content-between align-items-center">
+                <div class="ms-2">
+                    Entrez votre réponse ...
+                </div>
+                <button>Répondre</button>
+            </div>
+            {{form_end(formComment)}}
+        </div>
+        {% else %}
+        <div class="col text-center">
+            <a class="login" href="{{path('app_login')}}">Connectez-vous pour répondre</a>
+        </div>
+        {% endif %}
+            {% for comment in question.comments %}
+            <div class="col">
+    
+                <div class="card w-100">
+                        <p class="card-body">
+                            {{comment.content}}
+                        </p>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                        <a href="{{path('app_user_questions', {id: comment.user.id})}}">
+                            @{{comment.user.name}}
+                            {{comment.user.lastname}}
+                        </a>
+                        <small>
+                            {{comment.createdAt|format_datetime('short', 'short', locale='fr')}}
+                        </small>
+                    </div>
+                </div>
+            </div>
+                {% endfor %}
+                
+    </div>
+</div>
+
+    
+{% endblock %}

@@ -1,14 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Home Page{% endblock %}
 
 {% block body %}
-<div class="example-wrapper">
-    <div class="container text-center mt-5 ">
-        <h1>
-            <i class="bi bi-stars text-primary"></i> Boilerplate Symfony / Webpack Sass / Bootstrap <i class="bi bi-stars text-primary"></i>
-        </h1>
-        <h2 class="mt-5">You are ready to code <i class="bi bi-check-circle-fill text-success"></i></h2>
+<div class="container question-show">
+    <h2 class="text-center my-3">Questions récentes</h2>
+    <div class="row g-3">
+
+        {% for question in questions %}
+        {% include "_partials/_question_card.html.twig" with {comments: true}%}
+        {% endfor %}
     </div>
 </div>
 {% endblock %}

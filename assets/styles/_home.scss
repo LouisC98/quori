@@ -1,0 +1,47 @@
+.sidebar {
+    .nav-item {
+        a {
+            background-color: $lblue;
+            padding: .3rem .4rem;
+            box-shadow: 2px 2px 5px $dgrey;
+            border-radius: $border-ra;
+            transition: .5s;
+            color: $white;
+
+            &:hover {
+                background-color: $white;
+                border: solid 1px $lblue;
+                color: $lblue;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.questions-container {
+    .card {
+        background-color: $dblue;
+        color: $white;
+
+        .card-text {
+            color: $lgrey;
+        }
+
+        .card-footer {
+            a {
+                color: $lblue;
+
+                &:hover {
+                    color: $red;
+                }
+            }
+
+            small {
+                color: $lgrey;
+            }
+
+            color: $lblue;
+
+        }
+    }
+}

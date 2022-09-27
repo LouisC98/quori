@@ -1,0 +1,18 @@
+<div class="card shadow">
+    <a href="{{path('app_question_show', {id: comment.question.id})}}" class="card-header d-flex justify-content-between align-items-center">
+        <span>{{comment.question.title}}</span>
+        <small>@{{comment.question.user.name}} {{comment.question.user.lastname}}</small>
+    </a>
+    <p class="card-body">
+        {{comment.content}}
+    </p>
+    <div class="card-footer d-flex justify-content-between align-items-center">
+        <a href="{{path('app_user_questions', {id: comment.user.id})}}">
+            @{{comment.user.name}}
+            {{comment.user.lastname}}
+        </a>
+        <small>
+            {{comment.createdAt|format_datetime('short', 'short', locale='fr')}}
+        </small>
+    </div>
+</div>

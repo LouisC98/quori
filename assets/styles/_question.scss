@@ -1,0 +1,74 @@
+.question-show {
+    .profile {
+        a {
+            background-color: $lblue;
+            color: $white;
+            padding: .3rem .4rem;
+            border: solid 1px $lblue;
+            border-radius: $border-ra;
+            margin: 0 .5rem;
+
+            &:hover {
+                color: $lblue;
+                background-color: $white;
+            }
+        }
+    }
+
+    .card {
+        padding: 0;
+        background-color: $dblue;
+
+        .card-title {
+            color: $white;
+        }
+
+        .card-body {
+            color: $lgrey;
+        }
+
+        .card-footer {
+            color: $lblue;
+
+            a {
+                color: $lblue;
+
+                &:hover {
+                    color: $red;
+                }
+            }
+
+            small {
+                color: $lgrey;
+            }
+
+            button {
+                background-color: $red;
+                color: $white;
+                font-weight: bold;
+                border: solid 2px $red;
+                padding: .4rem;
+                border-radius: $border-ra;
+
+                &:hover {
+                    color: $red;
+                    background-color: $white;
+                }
+            }
+        }
+    }
+
+    .login {
+        background-color: $red;
+        color: $white;
+        font-weight: bold;
+        border: solid 2px $red;
+        padding: .4rem;
+        border-radius: $border-ra;
+
+        &:hover {
+            color: $red;
+            background-color: $white;
+        }
+    }
+}
