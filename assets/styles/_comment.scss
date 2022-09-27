@@ -1,0 +1,53 @@
+.comments-show {
+    .profile {
+        a {
+            background-color: $lblue;
+            color: $white;
+            padding: .3rem .4rem;
+            border: solid 1px $lblue;
+            border-radius: $border-ra;
+            margin: 0 .5rem;
+
+            &:hover {
+                color: $lblue;
+                background-color: $white;
+            }
+        }
+    }
+
+    .card {
+        background-color: $dblue;
+
+        .card-header {
+            background-color: $lgrey;
+
+            span {
+                font-weight: bold;
+            }
+
+            &:hover {
+                color: $dgrey;
+            }
+        }
+
+        .card-body {
+            color: $lgrey;
+        }
+
+        .card-footer {
+            color: $lblue;
+
+            a {
+                color: $lblue;
+
+                &:hover {
+                    color: $red;
+                }
+            }
+
+            small {
+                color: $lgrey;
+            }
+        }
+    }
+}

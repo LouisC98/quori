@@ -1,0 +1,56 @@
+<header>
+    <nav class="navbar navbar-expand-sm">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <div class="nav-brand me-3">
+                <a href="{{path('app_home')}}">
+                    <h1 class="logo">Quori</h1>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end">
+                <ul class="navbar-nav">
+                    <li class="nav-item me-2">
+                        <a class="nav-link" href="{{path('app_question_new')}}">Poser une question</a>
+                    </li>
+                    {% if is_granted('ROLE_USER') %}
+                    <li class="nav-item me-2">
+                        <a class="nav-link" href="{{path('app_user_questions', {id: app.user.id})}}">Mes questions</a>
+                    </li>
+                    <li class="nav-item me-2">
+                        <a class="nav-link" href="{{path('app_user_comments', {id: app.user.id})}}">Mes réponses</a>
+                    </li>
+                    {% endif %}
+                    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') == false %}
+                    <li class="nav-item me-2">
+                        <a class="nav-link" href="{{path('app_login')}}">Se connecter</a>
+                    </li>
+                    <li class="nav-item me-2">
+                        <a class="nav-link log-btn" href="{{path('app_register')}}">S'inscrire</a>
+                    </li>
+                    {% endif %}
+                    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                    <li class="nav-item">
+                        <a class="nav-link log-btn" href="{{path('app_logout')}}">Se déconnecter</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div id="burger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+        <div class="menu list-group shadow hidden">
+            <a class="list-group-item" href="{{path('app_question_new')}}">Poser une question</a>
+            {% if is_granted('ROLE_USER') %}
+                <a class="list-group-item" href="{{path('app_user_questions', {id: app.user.id})}}">Mes questions</a>
+                <a class="list-group-item" href="{{path('app_user_comments', {id: app.user.id})}}">Mes réponses</a>
+            {% endif %}
+            {% if is_granted('IS_AUTHENTICATED_REMEMBERED') == false %}
+                <a class="list-group-item" href="{{path('app_login')}}">Se connecter</a>
+                <a class="list-group-item" href="{{path('app_register')}}">S'inscrire</a>
+            {% endif %}
+            {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                <a class="list-group-item logout" href="{{path('app_logout')}}">Se déconnecter</a>
+            {% endif %}
+        </div>
+    </nav>
+</header>

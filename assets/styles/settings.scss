@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+// Elements
+$white : #fffffe;
+$dblue: #094067;
+$lblue: #3da9fc;
+$dgrey: #5f6c7b;
+$lgrey: #90b4ce;
+$red: #ef4565;
+
+$border-ra: 8px;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $white;
+}
+
+.logo {
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: bold;
+    color: $white;
+    font-size: 2.5rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.hidden {
+    display: none !important;
+}

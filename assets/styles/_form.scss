@@ -1,0 +1,208 @@
+form {
+    &[name="question"] {
+        margin: 2rem;
+        width: 80%;
+        padding: 1rem;
+        border-radius: $border-ra;
+        background-color: $dblue;
+
+        @media screen and (max-width: 425px) {
+            width: 100%;
+            margin: 0;
+        }
+
+        .text {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            label {
+                width: 100%;
+                font-size: 1.2rem;
+                color: $white;
+                margin-bottom: .4rem;
+            }
+
+            input {
+                background-color: $lgrey;
+                border-radius: $border-ra;
+                border: solid 2px $lblue;
+                width: 100%;
+                padding: .3rem;
+            }
+        }
+
+        .text-area {
+            margin-top: .5rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            label {
+                margin-bottom: .4rem;
+                color: $white;
+                width: 100%;
+                font-size: 1.2rem;
+            }
+
+            textarea {
+                background-color: $lgrey;
+                border: solid 2px $lblue;
+                padding: .3rem;
+                border-radius: $border-ra;
+                width: 100%;
+                min-height: 150px;
+            }
+        }
+
+        button {
+            background-color: $lblue;
+            color: $white;
+            font-weight: bold;
+            margin-top: .5rem;
+            border: solid 2px $lblue;
+            padding: .4rem;
+            border-radius: $border-ra;
+
+            &:hover {
+                border: solid 2px $lblue;
+                color: $lblue;
+                background-color: $white;
+            }
+        }
+    }
+
+    &[name="login"] {
+        margin: 2rem;
+        width: 50%;
+        border-radius: $border-ra;
+        padding: 1rem;
+        background-color: $dblue;
+
+        @media screen and (max-width: 426px) {
+            width: 100%;
+            margin: 0;
+        }
+
+        h1 {
+            color: $white;
+        }
+
+        label {
+            color: $lgrey;
+        }
+
+        input {
+            margin-bottom: .5rem;
+        }
+
+        a {
+            color: $lgrey;
+
+            &:hover {
+                color: $red;
+            }
+        }
+
+        button {
+            background-color: $lblue;
+            color: $white;
+            font-weight: bold;
+            border: solid 2px $lblue;
+            padding: .4rem;
+            border-radius: $border-ra;
+
+            &:hover {
+                border: solid 2px $lblue;
+                color: $lblue;
+                background-color: $white;
+            }
+        }
+    }
+
+    &[name="registration_form"] {
+        margin: 2rem;
+        width: 60%;
+        padding: 1rem;
+        border-radius: $border-ra;
+        background-color: $dblue;
+
+        @media screen and (max-width: 426px) {
+            width: 100%;
+            margin: 0;
+        }
+
+        .email,
+        .password,
+        .name,
+        .lastname {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            label {
+                width: 100%;
+                font-size: 1.2rem;
+                color: $white;
+            }
+
+            input {
+                background-color: $lgrey;
+                border-radius: $border-ra;
+                border: solid 2px $lblue;
+                width: 100%;
+                padding: .3rem;
+                margin-bottom: .5rem;
+            }
+
+        }
+
+        button {
+            background-color: $lblue;
+            color: $white;
+            font-weight: bold;
+            margin-top: .5rem;
+            border: solid 2px $lblue;
+            padding: .4rem;
+            border-radius: $border-ra;
+
+            &:hover {
+                color: $lblue;
+                background-color: $white;
+            }
+        }
+    }
+
+    &[name="comment"] {
+        width: 100%;
+        padding: .5rem;
+        border-radius: $border-ra;
+        background-color: $dblue;
+
+        textarea {
+            width: 100%;
+            min-height: 100px;
+            border-radius: $border-ra;
+            padding: .5rem;
+            background-color: $lgrey;
+        }
+
+        .form-footer {
+            color: $white;
+
+            button {
+                background-color: $lblue;
+                color: $white;
+                font-weight: bold;
+                border: solid 2px $lblue;
+                padding: .4rem;
+                border-radius: $border-ra;
+
+                &:hover {
+                    color: $lblue;
+                    background-color: $white;
+                }
+            }
+        }
+    }
+}
