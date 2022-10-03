@@ -14,7 +14,7 @@ class Vote
     private ?int $id = null;
 
     #[ORM\Column]
-    private ?bool $isVoted = null;
+    private ?bool $isLiked = null;
 
     #[ORM\ManyToOne(inversedBy: 'votes')]
     private ?Question $question = null;
@@ -31,14 +31,14 @@ class Vote
         return $this->id;
     }
 
-    public function isIsVoted(): ?bool
+    public function isIsLiked(): ?bool
     {
-        return $this->isVoted;
+        return $this->isLiked;
     }
 
-    public function setIsVoted(bool $isVoted): self
+    public function setIsLiked(bool $isLiked): self
     {
-        $this->isVoted = $isVoted;
+        $this->isLiked = $isLiked;
 
         return $this;
     }

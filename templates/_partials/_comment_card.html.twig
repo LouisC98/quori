@@ -11,8 +11,9 @@
             @{{comment.user.name}}
             {{comment.user.lastname}}
         </a>
+        {% include "_partials/_rating.html.twig" with {from: 'comment', id: comment.id, rating: comment.rating} %}
         <small>
-            {{comment.createdAt|format_datetime('short', 'short', locale='fr')}}
+            {{comment.createdAt|format_date(pattern="dd/MM/yy hh:mm")}}
         </small>
     </div>
 </div>

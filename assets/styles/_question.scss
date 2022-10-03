@@ -21,6 +21,20 @@
 
         .card-title {
             color: $white;
+
+            button {
+                background-color: $red;
+                color: $white;
+                font-weight: bold;
+                border: solid 2px $red;
+                padding: .4rem;
+                border-radius: $border-ra;
+
+                &:hover {
+                    color: $red;
+                    background-color: $white;
+                }
+            }
         }
 
         .card-body {
@@ -42,17 +56,39 @@
                 color: $lgrey;
             }
 
-            button {
-                background-color: $red;
-                color: $white;
-                font-weight: bold;
-                border: solid 2px $red;
-                padding: .4rem;
-                border-radius: $border-ra;
+            .question-link {
+                color: $lgrey;
+            }
 
-                &:hover {
+            .rating {
+                a {
+                    i {
+                        font-size: 1.5rem;
+
+                        &[class="fa-solid fa-thumbs-up"] {
+                            color: $lblue;
+                        }
+
+                        &[class="fa-solid fa-thumbs-down"] {
+                            color: $red;
+                        }
+                    }
+                }
+
+                p {
+                    font-size: 1.5rem;
+                }
+
+                .ratingPositive {
+                    color: $lblue;
+                }
+
+                .ratingNegative {
                     color: $red;
-                    background-color: $white;
+                }
+
+                .ratingNull {
+                    color: $lgrey;
                 }
             }
         }

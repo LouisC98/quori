@@ -3,8 +3,6 @@
 {% block title %}Question{% endblock %}
 
 {% block body %}
-<div class="container">
-
     <div class="question-show row row-cols-1 g-3">
         <div class="col">
             {% include "_partials/_question_card.html.twig" with {comments: false} %}
@@ -27,7 +25,7 @@
             <a class="login" href="{{path('app_login')}}">Connectez-vous pour répondre</a>
         </div>
         {% endif %}
-            {% for comment in question.comments %}
+            {% for comment in comments %}
             <div class="col">
     
                 <div class="card w-100">
@@ -42,13 +40,10 @@
                         <small>
                             {{comment.createdAt|format_datetime('short', 'short', locale='fr')}}
                         </small>
+                        {% include "_partials/_rating.html.twig" with {from: 'comment', id: comment.id, rating: comment.rating} %}
                     </div>
                 </div>
             </div>
                 {% endfor %}
-                
     </div>
-</div>
-
-    
 {% endblock %}

@@ -1,0 +1,16 @@
+<div class="d-flex rating align-items-center">
+    <a href="{{ path(from ~ '_rating', {id: id, score: 1}) }}" class="me-1">
+        <i class="fa-solid fa-thumbs-up"></i>
+    </a>
+    <p class="m-0 fw-bold {% 
+        if rating == 0 %}ratingNull{%
+        elseif rating > 0 %}ratingPositive{% 
+        elseif rating < 0 %}ratingNegative{% 
+        endif 
+            %}">
+        {{rating}}
+    </p>
+    <a href="{{ path(from ~ '_rating', {id: id, score: -1}) }}" class="ms-1">
+        <i class="fa-solid fa-thumbs-down"></i>
+    </a>
+</div>

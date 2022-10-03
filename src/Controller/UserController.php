@@ -17,9 +17,13 @@ class UserController extends AbstractController
     #[Route('/questions/{id}', name: 'app_user_questions')]
     public function questions(User $user, QuestionRepository $questionRepo): Response
     {
-        $questions = $questionRepo->findBy([
-            'user' => $user
-        ]);
+        $questions = $questionRepo->findBy(
+            ['user' => $user],
+            [
+                'createdAt' => 'DESC',
+                'rating' => 'DESC'
+            ]
+        );
 
         return $this->render('user/questions.html.twig', [
             'questions' => $questions,
@@ -30,9 +34,13 @@ class UserController extends AbstractController
     #[Route('/comments/{id}', name: 'app_user_comments')]
     public function comments(User $user, CommentRepository $commentRepository): Response
     {
-        $comments = $commentRepository->findBy([
-            'user' => $user
-        ]);
+        $comments = $commentRepository->findBy(
+            ['user' => $user],
+            [
+                'createdAt' => 'DESC',
+                'rating' => 'DESC'
+            ]
+        );
 
         return $this->render('user/comments.html.twig', [
             'comments' => $comments,

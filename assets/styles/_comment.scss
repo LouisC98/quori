@@ -48,6 +48,33 @@
             small {
                 color: $lgrey;
             }
+
+            .rating {
+                a {
+                    i {
+                        font-size: 1.2rem;
+
+                        &[class="fa-solid fa-thumbs-up"] {
+                            color: $lblue;
+                        }
+                        &[class="fa-solid fa-thumbs-down"] {
+                            color: $red;
+                        }
+                    }
+                }
+                p {
+                    font-size: 1.2rem;
+                }
+                .ratingPositive {
+                    color: $lblue;
+                }
+                .ratingNegative {
+                    color: $red;
+                }
+                .ratingNull {
+                    color: $lgrey;
+                }
+            }
         }
     }
 }
