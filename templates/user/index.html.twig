@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    Mon profil
+{% endblock title %}
+
+{% block body %}
+    <h2 class="text-center my-3">Mon profil</h2>
+    <div class="d-flex justify-content-center">
+        {{form_start(form)}}
+        {{form_rest(form)}}
+        <div class="d-flex justify-content-end">
+            <button>Enregistrer</button>
+        </div>
+        {{form_end(form)}}
+    </div>
+{% endblock body %}
