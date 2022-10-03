@@ -34,6 +34,19 @@ class RegistrationController extends AbstractController
             )
                 ->setRoles(["ROLE_USER"])
                 ->setCreatedAt(new DateTimeImmutable());
+            
+            $picture = $form->get('picture')->getData();
+            
+            if ($picture) {
+                $extension = $picture->guessExtension();
+                $filename = bin2hex(random_bytes(6)) . '.' . $extension;
+                $folder = $this->getParameter('pictures.folder');
+
+                $user->setPicture($filename);
+                $picture->move($folder, $filename);
+            } else {
+                $user->setPicture('default.jpg');
+            }
 
             $entityManager->persist($user);
             $entityManager->flush();

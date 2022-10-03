@@ -31,7 +31,12 @@ header {
                 }
             }
 
+            .profile-picture {
+                width: 50px;
+                border-radius: 50%;
+            }
         }
+
 
         #burger {
             display: none;
@@ -59,7 +64,7 @@ header {
     }
 }
 
-@media screen and (max-width: 676px) {
+@media screen and (max-width: 734px) {
     .navbar-nav {
         display: none;
     }
