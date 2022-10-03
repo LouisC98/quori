@@ -4,8 +4,6 @@ import './styles/app.scss';
 const burger = document.getElementById('burger');
 const menu = document.querySelector('.menu')
 
-const isOpen = false;
-
 burger.addEventListener('click', () => {
     menu.classList.toggle('hidden')
 })

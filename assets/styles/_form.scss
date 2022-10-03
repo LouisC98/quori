@@ -1,4 +1,12 @@
 form {
+
+    // pour le texte des erreurs
+    ul {
+        color: $red;
+        list-style: none;
+        font-weight: bold;
+    }
+
     &[name="question"] {
         margin: 2rem;
         width: 80%;
@@ -135,7 +143,8 @@ form {
         .email,
         .password,
         .name,
-        .lastname {
+        .lastname,
+        .picture {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
