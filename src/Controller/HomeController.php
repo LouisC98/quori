@@ -15,7 +15,10 @@ class HomeController extends AbstractController
     public function index(QuestionRepository $questionRepo): Response
     {
         return $this->render('home/index.html.twig', [
-            'questions' => $questionRepo->findAll(),
+            'questions' => $questionRepo->findBy([], [
+                'rating' => 'DESC',
+                'createdAt' => 'DESC',
+                ])
         ]);
     }
 }

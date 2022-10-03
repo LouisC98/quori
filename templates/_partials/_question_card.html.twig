@@ -1,8 +1,14 @@
 <div class="card w-100 shadow">
     <div class="card-body">
-        <h3 class="card-title">
-            {{question.title}}
-        </h3>
+        <div class="card-title d-flex justify-content-between align-items-center">
+            <h3>
+                {{question.title}}
+            </h3>
+            {% if app.user.id is defined and question.user.id == app.user.id %}
+            {{ include('question/_delete_form.html.twig') }}
+            {% endif %}
+        </div>
+        
         <p class="card-text">
             {{question.content}}
         </p>
@@ -13,19 +19,19 @@
                 @{{question.user.name}}
                 {{question.user.lastname}}
             </a>
-            {% if comments == true %}
-            <a class="ms-1" href="{{path('app_question_show', {id: question.id})}}">
-                Voir {{question.comments|length}} réponse{% if question.comments|length > 1 %}s{% endif %}
-            </a>
-            {% endif %}
+            
             <small class="ms-1">
-                {{question.createdAt|format_datetime('short', 'short', locale='fr')}}
+                {{question.createdAt|format_date(pattern="dd/MM/yy hh:mm")}}
             </small>
         </div>
-        {% if app.user.id is defined %}
-        {% if question.user.id == app.user.id  %}
-        {{ include('question/_delete_form.html.twig') }}
+        
+    </div>
+    <div class="card-footer d-flex align-items-center {{ comments ? 'justify-content-between' : 'justify-content-center' }}">
+        {% if comments %}
+            <a class="ms-1 fw-bold question-link" href="{{path('app_question_show', {id: question.id})}}">
+                Voir {{question.comments|length}} réponse{% if question.comments|length > 1 %}s{% endif %}
+            </a>
         {% endif %}
-        {% endif %}
+        {% include "_partials/_rating.html.twig" with {from: 'question', id: question.id, rating: question.rating} %}
     </div>
 </div>

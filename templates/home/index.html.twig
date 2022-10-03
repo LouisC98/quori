@@ -3,12 +3,14 @@
 {% block title %}Home Page{% endblock %}
 
 {% block body %}
-<div class="container question-show">
+<div class="question-show">
     <h2 class="text-center my-3">Questions récentes</h2>
-    <div class="row g-3">
+    <div class="row row-cols-1 g-3">
 
         {% for question in questions %}
-        {% include "_partials/_question_card.html.twig" with {comments: true}%}
+        <div class="col">
+            {% include "_partials/_question_card.html.twig" with {comments: true}%}
+        </div>
         {% endfor %}
     </div>
 </div>

@@ -38,30 +38,7 @@ class QuestionRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
-    public function findAllJson()
-    {
-        return $this->createQueryBuilder("q")
-            ->join('q.user', 'u')
-            ->addSelect('u')
-            ->getQuery()
-            ->getArrayResult();
-    }
 
-    public function findOneWithUsersAndComments(int $id)
-    {
-        return $this->createQueryBuilder('q')
-            ->select('q')
-            ->where('q.id = :id')
-            ->setParameter('id', $id)
-            ->join('q.user', 'u')
-            ->addSelect('u')
-            ->leftJoin('q.comments', 'c')
-            ->addSelect('c')
-            ->leftJoin('c.user', 'cu')
-            ->addSelect('cu')
-            ->getQuery()
-            ->getOneOrNullResult();
-    }
 //    /**
 //     * @return Question[] Returns an array of Question objects
 //     */
