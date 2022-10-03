@@ -1,13 +1,13 @@
 header {
     background-color: $dblue;
-    box-shadow: 2px 2px 5px $dblue;
+    box-shadow: 0px 0px 5px $dblue;
 
     nav {
         .nav-item {
 
             .nav-link {
                 background-color: $lblue;
-                box-shadow: 2px 2px 5px $dgrey;
+                box-shadow: 0px 0px 5px $lblue;
                 border-radius: $border-ra;
                 transition: .5s;
                 color: $white;
@@ -20,7 +20,7 @@ header {
 
             .log-btn {
                 background-color: $red;
-                box-shadow: 2px 2px 5px $dgrey;
+                box-shadow: 0px 0px 5px $lblue;
                 border-radius: $border-ra;
                 transition: .5s;
                 color: $white;
@@ -34,6 +34,12 @@ header {
             .profile-picture {
                 width: 50px;
                 border-radius: 50%;
+                box-shadow: 0px 0px 5px $lblue;
+                transition: 1s;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
             }
         }
 
