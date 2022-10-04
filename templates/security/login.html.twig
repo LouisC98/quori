@@ -37,7 +37,14 @@
             </div>
         #}
         <div class="d-flex justify-content-between align-items-center mt-3">
-            <a href="{{path('app_register')}}">Pas encore de compte ?</a>
+            <div class="row row-cols-1">
+                <div class="col">
+                    <a href="{{path('app_register')}}">Pas encore de compte ?</a>
+                </div>
+                <div class="col">
+                    <a href="{{path('app_forgot_password_request')}}">Mot de passe oublié ?</a>
+                </div>
+            </div>
             <button type="submit">
                 Se connecter
             </button>

@@ -1,0 +1,25 @@
+{% apply inline_css %}
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+        h1 {
+            color: white;
+            background-color: #094067;
+            width: 100%;
+            padding: 1rem;
+        }
+        h2 {
+            color: #094067;
+            font-weight: bold;
+        }
+    </style>
+
+    <h1>Bonjour !</h1>
+    
+    <p>Pour modifier votre mot de passe cliquez sur le lien suivant :</p>
+    
+    <a href="{{ url('app_reset_password', {token: resetToken.token}) }}">{{ url('app_reset_password', {token: resetToken.token}) }}</a>
+    
+    <p>Ce lien expirera dans {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.</p>
+    
+    <h2>Quori</h2>
+{% endapply %}

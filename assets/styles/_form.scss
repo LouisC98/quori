@@ -216,4 +216,98 @@ form {
             }
         }
     }
+
+    &[name="reset_password_request_form"] {
+        width: 50%;
+        margin: 2rem auto;
+        background-color: $dblue;
+        padding: 1rem;
+        border-radius: $border-ra;
+        color: $white;
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+        }
+
+        .email {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            label {
+                width: 100%;
+                font-size: 1.2rem;
+                color: $white;
+            }
+
+            input {
+                background-color: $lgrey;
+                border-radius: $border-ra;
+                border: solid 2px $lblue;
+                width: 100%;
+                padding: .3rem;
+                margin-bottom: .5rem;
+            }
+        }
+        button {
+            background-color: $lblue;
+            color: $white;
+            font-weight: bold;
+            border: solid 2px $lblue;
+            padding: .4rem;
+            border-radius: $border-ra;
+
+            &:hover {
+                color: $lblue;
+                background-color: $white;
+            }
+        }
+    }
+
+    &[name="change_password_form"] {
+        width: 50%;
+        margin: 2rem auto;
+        background-color: $dblue;
+        padding: 1rem;
+        border-radius: $border-ra;
+        color: $white;
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+        }
+
+        .password, .new-password {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            label {
+                width: 100%;
+                font-size: 1.2rem;
+                color: $white;
+            }
+
+            input {
+                background-color: $lgrey;
+                border-radius: $border-ra;
+                border: solid 2px $lblue;
+                width: 100%;
+                padding: .3rem;
+                margin-bottom: .5rem;
+            }
+        }
+        button {
+            background-color: $lblue;
+            color: $white;
+            font-weight: bold;
+            border: solid 2px $lblue;
+            padding: .4rem;
+            border-radius: $border-ra;
+
+            &:hover {
+                color: $lblue;
+                background-color: $white;
+            }
+        }
+    }
 }

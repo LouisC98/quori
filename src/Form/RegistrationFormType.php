@@ -27,7 +27,15 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('password', PasswordType::class, [
                 'label' => 'Mot de passe :',
-                'row_attr' => ['class' => 'password']
+                'row_attr' => ['class' => 'password'],
+                'constraints' => [
+                    new Length([
+                        'min' => 6,
+                        'minMessage' => 'Votre mot de passe doit au moins faire {{ limit }} caractères',
+                        // max length allowed by Symfony for security reasons
+                        'max' => 4096,
+                    ])
+                ]
             ])
             ->add('name', TextType::class, [
                 'label' => 'Prénom :',
